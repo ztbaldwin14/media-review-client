@@ -14,7 +14,7 @@ const Signup = (props) => {
                 'Content-Type': 'application/json'
             })
         })
-            .then((response) => response.json())
+            .then((res) => res.json())
             .then((data) => {
                 props.updateToken(data.sessionToken)
             })
@@ -26,11 +26,11 @@ const Signup = (props) => {
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor='username'>Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name='username' value={username} />
+                    <Input onChange={(e) => setUsername(e.target.value)} name='username' value={username} minLength={'3'} required />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='password'>Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name='password' value={password} />
+                    <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' value={password} minLength={'8'} required />
                 </FormGroup>
                 <Button type='submit'>Signup</Button>
             </Form>

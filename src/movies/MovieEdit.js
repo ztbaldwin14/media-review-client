@@ -10,9 +10,9 @@ const MovieEdit = (props) => {
 
     const movieUpdate = (event, movie) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/movie/${props.movieToUpdate.id}`, {
+        fetch(`http://localhost:3000/movies/${props.movieToUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({movie: {title: editTitle, description: editDescription, actors: editActors, rating: editRating, runtime: editRuntime }}),
+            body: JSON.stringify({movies: {title: editTitle, description: editDescription, actors: editActors, rating: editRating, runtime: editRuntime }}),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token

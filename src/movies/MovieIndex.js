@@ -10,7 +10,7 @@ const MovieIndex = (props) => {
     const [movieToUpdate, setMovieToUpdate] = useState({});
 
     const fetchMovies = () => {
-        fetch('http://localhost:3000/movie/', {
+        fetch('http://localhost:3000/movies', {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',

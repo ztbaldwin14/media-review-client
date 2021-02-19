@@ -3,7 +3,7 @@ import { Table, Button } from 'reactstrap';
 
 const MovieTable = (props) => {
     const deleteMovie = (movie) => {
-        fetch(`http://localhost:3000/log/${movie.id}`, {
+        fetch(`http://localhost:3000/movies/${movie.id}`, {
             method: 'DELETE',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -17,7 +17,7 @@ const MovieTable = (props) => {
         return props.movies.map((movie, index) => {
             return(
                 <tr key={index}>
-                    <th scope='row'>{movie.id}</th>
+                    <th scope='row'>{movie.ownerid}</th>
                     <th>{movie.title}</th>
                     <th>{movie.description}</th>
                     <th>{movie.actors}</th>
@@ -48,6 +48,7 @@ const MovieTable = (props) => {
                     </tr>
                 </thead>
                 <tbody>
+                    {movieMapper()}
                 </tbody>
             </Table>
         </>

@@ -10,9 +10,9 @@ const MovieCreate = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3000/movie/', {
+        fetch('http://localhost:3000/movies/create', {
             method: 'POST',
-            body: JSON.stringify({movie: {title: title, description: description, actors: actors, rating: rating, runtime: runtime}}),
+            body: JSON.stringify({movies: {title: title, description: description, actors: actors, rating: rating, runtime: runtime}}),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
@@ -25,7 +25,7 @@ const MovieCreate = (props) => {
                 setDescription('');
                 setActors('');
                 setRating('');
-                setRuntime('');
+                setRuntime();
                 props.fetchMovies();
             })
     }
@@ -36,23 +36,23 @@ const MovieCreate = (props) => {
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor='title' />
-                    <Input name='title' value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <Input name='title' placeholder='title' value={title} onChange={(e) => setTitle(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='description' />
-                    <Input name='description' value={description} onChange={(e) => setDescription(e.target.value)} />
+                    <Input name='description' placeholder='description' value={description} onChange={(e) => setDescription(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='actors' />
-                    <Input name='actors' value={actors} onChange={(e) => setActors(e.target.value)} />
+                    <Input name='actors' placeholder='actors' value={actors} onChange={(e) => setActors(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='rating' />
-                    <Input name='rating' value={rating} onChange={(e) => setRating(e.target.value)} />
+                    <Input name='rating' placeholder='rating' value={rating} onChange={(e) => setRating(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='runtime' />
-                    <Input name='runtime' value={runtime} onChange={(e) => setRuntime(e.target.value)} />
+                    <Input name='runtime' placeholder='runtime' value={runtime} onChange={(e) => setRuntime(e.target.value)} />
                 </FormGroup>
                 <Button type='submit'>Click to Submit</Button>
             </Form>

@@ -15,7 +15,7 @@ const Auth = (props) => {
                 </Col>
             </Row>
         </Container>
-    )
-}
+    );
+};
 
 export default Auth;
