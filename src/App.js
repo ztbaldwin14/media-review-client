@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Sitebar from './home/Navbar';
 import Auth from './auth/Auth';
 import MovieIndex from './movies/MovieIndex';
 
-function App() {
+const App = () => {
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {

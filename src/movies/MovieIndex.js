@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import MovieCreate from './MovieCreate';
 import MovieTable from './MovieTable';
 import MovieEdit from './MovieEdit';
+import Random from '../auth/Random';
 
 const MovieIndex = (props) => {
     const [movies, setMovies] = useState([]);
@@ -49,6 +50,7 @@ const MovieIndex = (props) => {
                 </Col>
                 {updateActive ? <MovieEdit movieToUpdate={movieToUpdate} updateOff={updateOff} token={props.token} fetchMovies={fetchMovies} /> : <></>}
             </Row>
+            <Random/>
         </Container>
     )
 }

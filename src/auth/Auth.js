@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import Signup from './Signup';
-import Login from './Login';
-import Random from './Random';
+import Signup from '../auth/Signup';
+import Login from '../auth/Login';
+
 
 const Auth = (props) => {
     return(
