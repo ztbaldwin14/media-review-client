@@ -10,13 +10,13 @@ const Sitebar = (props) => {
     }
 
     return(
-        <Navbar color='faded' light expand='md'>
-            <NavbarBrand href='/'>Movie Review</NavbarBrand>
+        <Navbar tag="h1" color='faded' light expand='md'>
+            <NavbarBrand tag="h4" style={{ color: '#FF9506', fontSize:'36pt'}} href='/'>Movie Review</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='ml-auto' navbar>
                     <NavItem>
-                        <Button onClick={props.clearToken}>Logout</Button>
+                        <Button  style={{backgroundColor:'#026FB9', border:'outset'}} onClick={props.clearToken}>Logout</Button>
                     </NavItem>
                 </Nav>
             </Collapse>
