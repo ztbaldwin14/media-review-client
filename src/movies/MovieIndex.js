@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import MovieCreate from './MovieCreate';
 import MovieTable from './MovieTable';
 import MovieEdit from './MovieEdit';
-import Random from '../auth/Random';
+// import Random from '../auth/Random';
 
 const MovieIndex = (props) => {
     const [movies, setMovies] = useState([]);
@@ -42,15 +42,16 @@ const MovieIndex = (props) => {
     return(
         <Container>
             <Row>
-                <Col md='3'>
+                <Col>
                     <MovieCreate fetchMovies={fetchMovies} token={props.token} />
                 </Col>
-                <Col md='9'>
+            </Row>
+            <Row>
+                <Col>
                     <MovieTable movies={movies} editUpdateMovie={editUpdateMovie} updateOn={updateOn} fetchMovies={fetchMovies} token={props.token} />
                 </Col>
-                {updateActive ? <MovieEdit movieToUpdate={movieToUpdate} updateOff={updateOff} token={props.token} fetchMovies={fetchMovies} /> : <></>}
             </Row>
-            <Random/>
+                {updateActive ? <MovieEdit movieToUpdate={movieToUpdate} updateOff={updateOff} token={props.token} fetchMovies={fetchMovies} /> : <></>}
         </Container>
     )
 }

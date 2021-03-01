@@ -28,11 +28,13 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div style={{
+      backgroundColor: 'rgb(54,54,49)',
+      fontFamily:'Black Ops One'
+    }}>
       <Sitebar clearToken={clearToken} />
       {protectedViews()}
     </div>
   );
 }
-
 export default App;
