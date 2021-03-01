@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Sitebar from './home/Navbar';
 import Auth from './auth/Auth';
 import MovieIndex from './movies/MovieIndex';
+import Footer from './home/Footer';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -31,6 +32,7 @@ function App() {
     <div>
       <Sitebar clearToken={clearToken} />
       {protectedViews()}
+      <Footer />
     </div>
   );
 }

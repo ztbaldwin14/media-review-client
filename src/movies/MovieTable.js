@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
+import Footer from '../home/Footer';
 
 const MovieTable = (props) => {
     const deleteMovie = (movie) => {
@@ -11,6 +12,17 @@ const MovieTable = (props) => {
             })
         })
         .then(() => props.fetchMovies())
+    }
+
+    const submitReview = (movie) => {
+        fetch(`http://localhost:3000/movies/review/${movie.id}`, {
+            method: 'PUT',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': props.token
+            })
+            .then(() => props.fetchMovies())
+        })
     }
 
     const movieMapper = () => {
@@ -32,27 +44,27 @@ const MovieTable = (props) => {
         })
     }
 
-    return(
-        <>
-            <h3>Movies</h3>
-            <hr />
-            <Table striped>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Actors</th>
-                        <th>Rating</th>
-                        <th>Runtime</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {movieMapper()}
-                </tbody>
-            </Table>
-        </>
-    )
+    return (
+      <>
+        <h3>Movies</h3>
+        <hr />
+        <Table striped>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Actors</th>
+              <th>Rating</th>
+              <th>Runtime</th>
+            </tr>
+          </thead>
+          <tbody>
+            {movieMapper()}
+          </tbody>
+        </Table>
+      </>
+    );
 }
 
 export default MovieTable;
