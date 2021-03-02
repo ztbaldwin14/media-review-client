@@ -42,10 +42,12 @@ const MovieIndex = (props) => {
   return (
     <Container>
       <Row>
-        <Col md="3">
+        <Col>
           <MovieCreate fetchMovies={fetchMovies} token={props.token} />
         </Col>
-        <Col md="9">
+      </Row>
+      <Row>
+        <Col>
           <MovieTable
             movies={movies}
             editUpdateMovie={editUpdateMovie}
@@ -54,30 +56,17 @@ const MovieIndex = (props) => {
             token={props.token}
           />
         </Col>
-        {updateActive ? (
-          <MovieEdit
-            movieToUpdate={movieToUpdate}
-            updateOff={updateOff}
-            token={props.token}
-            fetchMovies={fetchMovies}
-          />
-        ) : (
-          <></>
-        )}
       </Row>
-      <Row
-        style={{
-          justifyContent: "center",
-          backgroundColor: "#f1f1f1",
-          height: "250px",
-          width: "250px",
-          //   marginBottom: "3rem",
-        }}
-      >
-        <Col md="9">
-          <CarouselImg />
-        </Col>
-      </Row>
+      {updateActive ? (
+        <MovieEdit
+          movieToUpdate={movieToUpdate}
+          updateOff={updateOff}
+          token={props.token}
+          fetchMovies={fetchMovies}
+        />
+      ) : (
+        <></>
+      )}
     </Container>
   );
 };

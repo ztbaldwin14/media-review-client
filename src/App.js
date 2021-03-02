@@ -32,13 +32,15 @@ function App() {
   };
 
   return (
-    <div>
-      <div>
-        <Sitebar clearToken={clearToken} />
-        {protectedViews()}
-      </div>
+    <div
+      style={{
+        backgroundColor: "rgb(54,54,49)",
+        fontFamily: "Black Ops One",
+      }}
+    >
+      <Sitebar clearToken={clearToken} />
+      {protectedViews()}
     </div>
   );
 }
-
 export default App;
