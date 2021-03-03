@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
+
 const Login = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -21,7 +22,7 @@ const Login = (props) => {
     }
 
     return(
-        <div>
+        <>
             <h1>Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -34,7 +35,19 @@ const Login = (props) => {
                 </FormGroup>
                 <Button type='submit'>Login</Button>
             </Form>
-        </div>
+        </>  
+        // <div>
+        //     <h1 style={{ color: 'black'}}>Login</h1>
+        //     <Form className='input-group' onSubmit={handleSubmit}>
+        //         <FormGroup>
+        //             <Label htmlFor='username' className='input-field' style={{ color: 'black'}}>Username</Label>
+        //             <Input onChange={(e) => setUsername(e.target.value)} name='username' value={username} />
+        //             <Label htmlFor='password' className='input-field' style={{ color: 'black'}}>Password</Label>
+        //             <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' value={password} />
+        //             <Button type='submit' className='submit-btn'>Login</Button>
+        //         </FormGroup>
+        //     </Form>
+        // </div>
     )
 }
 
