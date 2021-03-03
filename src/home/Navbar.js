@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Button } from 'reactstrap';
+import Reviews from '../movies/Reviews';
 
 const Sitebar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,10 @@ const Sitebar = (props) => {
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='ml-auto' navbar>
                     <NavItem>
-                        <Button  style={{backgroundColor:'#026FB9', border:'outset'}} onClick={props.clearToken}>Logout</Button>
+                        <Button onClick={() => props.setShowReviews(!props.showReviews)}>Reviews</Button>
+                    </NavItem>
+                    <NavItem>
+                        <Button style={{backgroundColor:'#026FB9', border:'outset'}} onClick={props.clearToken}>Logout</Button>
                     </NavItem>
                 </Nav>
             </Collapse>

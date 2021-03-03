@@ -3,9 +3,11 @@ import Sitebar from './home/Navbar';
 import Auth from './auth/Auth';
 import MovieIndex from './movies/MovieIndex';
 import Footer from './home/Footer';
+import Reviews from './movies/Reviews';
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
+  const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
     if (localStorage.getItem('token')){
@@ -28,13 +30,17 @@ function App() {
     return (sessionToken === localStorage.getItem('token') ? <MovieIndex token={sessionToken} /> : <Auth updateToken={updateToken} />)
   }
 
+  const reviews = () => {
+    return (sessionToken === localStorage.getItem('token') ? <Reviews token={sessionToken} /> : <Auth updateToken={updateToken} />)
+  }
+
   return (
     <div style={{
       backgroundColor: 'rgb(54,54,49)',
       fontFamily:'Black Ops One'
     }}>
-      <Sitebar clearToken={clearToken} />
-      {protectedViews()}
+      <Sitebar clearToken={clearToken} reviews={reviews} showReviews={showReviews} setShowReviews={setShowReviews} />
+      {showReviews ? reviews() : protectedViews()}
       <Footer />
     </div>
   );
