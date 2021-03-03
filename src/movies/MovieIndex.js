@@ -47,7 +47,7 @@ const MovieIndex = (props) => {
             </Row>
             <Row>
                 <Col>
-                    <MovieTable movies={movies} editUpdateMovie={editUpdateMovie} updateOn={updateOn} fetchMovies={fetchMovies} token={props.token} />
+                    <MovieTable movies={movies} editUpdateMovie={editUpdateMovie} updateOn={updateOn} fetchMovies={fetchMovies} token={props.token} movieToUpdate={movieToUpdate} />
                 </Col>
             </Row>
                 {updateActive ? <MovieEdit movieToUpdate={movieToUpdate} updateOff={updateOff} token={props.token} fetchMovies={fetchMovies} /> : <></>}
