@@ -7,6 +7,7 @@ const Signup = (props) => {
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
+        debugger
         event.preventDefault();
         fetch('http://localhost:3000/user/register', {
             method: 'POST',
@@ -23,7 +24,7 @@ const Signup = (props) => {
     }
 
     return(
-        <>
+        <React.Fragment>
             <div className='registerform'>
         <h1>Signup</h1>
         <Form onSubmit={handleSubmit}>
@@ -38,7 +39,7 @@ const Signup = (props) => {
             <Button type='submit'>Signup</Button>
         </Form>
         </div>
-    </>   
+    </React.Fragment>   
     
         // <div>
         //     <h1 style={{ color: 'black'}}>Signup</h1>

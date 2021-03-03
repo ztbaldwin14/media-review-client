@@ -22,7 +22,7 @@ const Login = (props) => {
     }
 
     return(
-        <>
+        <React.Fragment>
             <h1>Login</h1>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
@@ -35,7 +35,7 @@ const Login = (props) => {
                 </FormGroup>
                 <Button type='submit'>Login</Button>
             </Form>
-        </>  
+        </React.Fragment>  
         // <div>
         //     <h1 style={{ color: 'black'}}>Login</h1>
         //     <Form className='input-group' onSubmit={handleSubmit}>
