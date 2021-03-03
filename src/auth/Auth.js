@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container} from 'reactstrap';
-import Signup from './Signup';
-import Login from './Login';
+import Signup from '../auth/Signup';
+import Login from '../auth/Login';
 import {useSpring, animated} from 'react-spring';
 
 const Auth = (props) => {
