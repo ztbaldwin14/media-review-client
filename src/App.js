@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import Sitebar from './home/Navbar';
+import Auth from './auth/Auth';
+import MovieIndex from './movies/MovieIndex';
+import Footer from './home/Footer';
+import Reviews from './movies/Reviews';
 
 function App() {
+  const [sessionToken, setSessionToken] = useState('');
+  const [showReviews, setShowReviews] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem('token')){
+      setSessionToken(localStorage.getItem('token'));
+    }
+  }, [])
+
+  const updateToken = (newToken) => {
+    localStorage.setItem('token', newToken);
+    setSessionToken(newToken);
+    console.log(newToken);
+  }
+
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
+
+  const protectedViews = () => {
+    return (sessionToken === localStorage.getItem('token') ? <MovieIndex token={sessionToken} /> : <Auth updateToken={updateToken} />)
+  }
+
+  const reviews = () => {
+    return (sessionToken === localStorage.getItem('token') ? <Reviews token={sessionToken} /> : <Auth updateToken={updateToken} />)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+      backgroundColor: 'rgb(54,54,49)',
+      fontFamily:'Black Ops One'
+    }}>
+      <Sitebar clearToken={clearToken} reviews={reviews} showReviews={showReviews} setShowReviews={setShowReviews} />
+      {showReviews ? reviews() : protectedViews()}
+      <Footer />
     </div>
   );
 }
-
 export default App;
