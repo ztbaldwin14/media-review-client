@@ -27,8 +27,8 @@ const Auth = (props) => {
                     <button onClick={registerClicked} id='registerBtn' className='active'>Signup</button>
                 </div>
                 <div className='form-group'>
-                    <animated.form action='' id='registerform' style={registerProps}><Signup className='registerform' updateToken={props.updateToken} /></animated.form>
                     <animated.form action='' id='loginform' style={loginProps}><Login className='loginform' updateToken={props.updateToken} /></animated.form>
+                    <animated.form action='' id='registerform' style={registerProps}><Signup className='registerform' updateToken={props.updateToken} /></animated.form>
                 </div>
             </div>
         </Container>
