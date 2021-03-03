@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import MovieTable from './MovieTable';
+
 import { Button, Container, Row, Col } from 'reactstrap';
-import ReactStars from 'react-rating-stars-component';
+
 
 const Reviews = (props) => {
     const [movies, setMovies] = useState([]);
