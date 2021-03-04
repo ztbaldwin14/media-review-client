@@ -54,6 +54,7 @@ const MovieIndex = (props) => {
             updateOn={updateOn}
             fetchMovies={fetchMovies}
             token={props.token}
+            movieToUpdate={movieToUpdate}
           />
         </Col>
       </Row>

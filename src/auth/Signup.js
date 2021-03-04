@@ -18,6 +18,7 @@ const Signup = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         props.updateToken(data.sessionToken);
       });
   };
