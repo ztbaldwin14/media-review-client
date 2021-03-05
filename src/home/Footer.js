@@ -6,12 +6,16 @@ const Footer = () => {
         color: 'white',
         textAlign: 'center',
         marginTop: '20px',
-        height: '25px'
+        height: '25px',
+        position: 'fixed',
+        bottom: '0px',
+        width: '100%',
+        marginTop: '25px'
     }
 
     return(
         <footer style={style}>
-            Movie Review App Title Here
+            2021 <span>&#169;</span> Reel Reviews
         </footer>
     )
 }

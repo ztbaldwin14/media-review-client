@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Button, Card, CardImg, CardTitle, CardText, CardGroup,
     CardSubtitle, CardBody, Container, Row, Col } from 'reactstrap';
 import ReactStars from 'react-rating-stars-component';
+import reel from '../images/reelimage.PNG';
 
 const MovieTable = (props) => {
     const [stars, setStars] = useState();
@@ -33,6 +34,7 @@ const MovieTable = (props) => {
     }
 
     const movieMapper = () => {
+      
         return props.movies.map((movie, index) => {
             return(
                 <Container key={index}>
@@ -40,12 +42,11 @@ const MovieTable = (props) => {
                 <Col>
                 <CardGroup>
                     <Card style={{width:'100px', backgroundColor:'#026FB9', margin:'10px', border:'outset', borderRadius:'10pt', flexDirection:'row'}}>
-                        <CardImg style={{width:'182px', height:'268px', margin:'10px'}} src="https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Card image cap" />
+                        <CardImg style={{width:'182px', height:'268px', margin:'10px'}}  alt="Card image cap" src={reel} />
                         <CardBody>
                         <CardTitle tag="h3" style={{color:'black'}}>Title:  {movie.title}</CardTitle>
                         <CardSubtitle tag="h4" style={{color:'black'}}>Details:</CardSubtitle>
                         <ul key={index}>
-                        <CardText style={{color:'black'}}>ID:  {movie.ownerid}</CardText>
                         <CardText style={{color:'black'}}>Description:  {movie.description}</CardText>
                         <CardText style={{color:'black'}}>Actors:  {movie.actors}</CardText>
                         <CardText style={{color:'black'}}>Rating:  {movie.rating}</CardText>
@@ -53,8 +54,8 @@ const MovieTable = (props) => {
                         </ul>
                         </CardBody>
                         <Col style={{marginRight: '20px'}}>
-                            <ReactStars name={`${Math.random()*10}}`} value={stars} count={5} onChange={e => setStars(e)} size={24} activeColor='#ffd700' />
-                            <textarea name='review' value={review} onChange={(e) => setReview(e.target.value)} placeholder='Leave Review Here' style={{marginTop: '10px', height: '100px', width: '250px', border: 'solid'}}></textarea>
+                            <ReactStars name={`${Math.random()*10}}`} value={stars} count={5} onChange={e => setStars(e)} size={24} activeColor='#FF9506' />
+                            <textarea name='review' value={props.review} onChange={(e) => setReview(e.target.value)} placeholder='Leave Review Here' style={{marginTop: '10px', height: '100px', width: '250px', border: 'solid'}}></textarea>
                             <Button style={{ backgroundColor: '#026FB9', color: 'black', border: 'solid'}} type='button' onClick={(e) => {reviewMovie(movie)}}>Submit Review</Button>
                             <CardBody style={{display:'flex', alignItems:'flex-end', marginRight:'auto', textAlign:'right'}}>
                             <Button style={{ backgroundColor: '#FF9506', color:'black', border:'solid'}} onClick={() => {props.editUpdateMovie(movie); props.updateOn()}}>Update</Button>
@@ -73,7 +74,7 @@ const MovieTable = (props) => {
         <>
             <h3 style={{ color: '#FF9506', textAlign:'center', fontSize:'28pt'}}>Fan Reviews</h3>
             <hr />
-            <div>
+            <div style={{marginBottom: '30px'}}>
                 {movieMapper()}
             </div>
         </>

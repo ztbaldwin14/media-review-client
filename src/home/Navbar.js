@@ -12,7 +12,7 @@ const Sitebar = (props) => {
 
     return(
         <Navbar tag="h1" color='faded' light expand='md'>
-            <NavbarBrand tag="h4" style={{ color: '#FF9506', fontSize:'36pt'}} href='/'>Movie Review</NavbarBrand>
+            <NavbarBrand tag="h4" style={{ color: '#FF9506', fontSize:'36pt'}} href='/'>Reel Reviews</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className='ml-auto' navbar>

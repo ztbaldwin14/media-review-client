@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import MovieTable from './MovieTable';
 import { Button, Container, Row, Col } from 'reactstrap';
 import ReactStars from 'react-rating-stars-component';
 
@@ -17,15 +16,14 @@ const Reviews = (props) => {
         .then((res) => res.json())
         .then((data) => setMovies(data))
     }
-    
+
     const reviewMapper = () => {
         return movies.map((movie, index) => {
             return(
                 <tr key={index}>
-                    <th scope='row'>{movie.id}</th>
                     <td>{movie.title}</td>
                     <td>{movie.review}</td>
-                    <td>{movie.stars}</td>
+                    <td><ReactStars value={movie.stars} edit={false} count={5} size={24} activeColor='#FF9506' /></td>
                     <td>
                         <Button>Update Review</Button>
                     </td>
