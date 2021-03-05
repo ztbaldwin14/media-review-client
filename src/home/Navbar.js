@@ -3,12 +3,12 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, Button } fr
 import Reviews from '../movies/Reviews';
 
 const Sitebar = (props) => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => {
-        let newIsOpen = !isOpen;
-        setIsOpen(newIsOpen);
-    }
+  const toggle = () => {
+    let newIsOpen = !isOpen;
+    setIsOpen(newIsOpen);
+  };
 
     return(
 

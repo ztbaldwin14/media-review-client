@@ -1,37 +1,38 @@
+
 import React, { useState } from 'react';
 import {Button, Card, CardImg, CardTitle, CardText, CardGroup,
     CardSubtitle, CardBody, Container, Row, Col, ListGroupItem, ListGroup, ListGroupItemHeading,ListGroupItemText} from 'reactstrap';
 import ReactStars from 'react-rating-stars-component';
 import reel from '../images/reelimage.PNG';
 
+
 const MovieTable = (props) => {
-    const [stars, setStars] = useState();
-    const [review, setReview] = useState('');
+  const [stars, setStars] = useState();
+  const [review, setReview] = useState("");
 
-    const deleteMovie = (movie) => {
-        fetch(`http://localhost:3000/movies/${movie.id}`, {
-            method: 'DELETE',
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': props.token
-            })
-        })
-        .then(() => props.fetchMovies())
-    }
+  const deleteMovie = (movie) => {
+    fetch(`http://localhost:3000/movies/${movie.id}`, {
+      method: "DELETE",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: props.token,
+      }),
+    }).then(() => props.fetchMovies());
+  };
 
-    const reviewMovie = (movie) => {
-        fetch(`http://localhost:3000/movies/${movie.id}`, {
-            method: 'PUT',
-            body: JSON.stringify({movies: {stars: stars, review: review }}),
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': props.token
-            })
-        })
-        .then((res) => {
-            props.fetchMovies();
-        })
-    }
+  const reviewMovie = (movie) => {
+    fetch(`http://localhost:3000/movies/${movie.id}`, {
+      method: "PUT",
+      body: JSON.stringify({ movies: { stars: stars, review: review } }),
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: props.token,
+      }),
+    }).then((res) => {
+      props.fetchMovies();
+    });
+  };
+
 
     const movieMapper = () => {
 

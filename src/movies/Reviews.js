@@ -1,9 +1,12 @@
+
+import MovieTable from "./MovieTable";
 import React, { useState, useEffect } from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { Card, Container, Row, Col, ListGroup, ListGroupItem, ListGroupItemText} from 'reactstrap';
 
 const Reviews = (props) => {
-    const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
+
 
     function fetchMovies(){
         fetch('http://localhost:3000/movies', {
@@ -55,25 +58,19 @@ const Reviews = (props) => {
                 </>
             )
         })
+
     }
-    
-    useEffect(() => {
-        if (!props.token) {
-            return
-        }
-        
-        fetchMovies();
-    }, [props.token]);
-    
-    return(
-        <Container>
-            <Row>
-                <Col>
-                    {reviewMapper()}
-                </Col>
-            </Row>
-        </Container>
-    )
-}
+
+    fetchMovies();
+  }, [props.token]);
+
+  return (
+    <Container>
+      <Row>
+        <Col>{reviewMapper()}</Col>
+      </Row>
+    </Container>
+  );
+};
 
 export default Reviews;
