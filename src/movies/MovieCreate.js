@@ -47,29 +47,57 @@ const MovieCreate = (props) => {
       });
   };
 
-  return (
-    <>
-      <Container
-        style={{
-          backgroundColor: "#EA4E33",
-          width: "100%",
-          marginBottom: "30px",
-          border: "outset",
-          borderRadius: "10px",
-        }}
-      >
-        <h3
-          style={{
-            color: "black",
-            position: "relative",
-            webkitTextStrokeWidth: ".5px",
-            webkitTextStrokeColor: "black",
-            fontSize: "28pt",
-            textAlign: "center",
-          }}
-        >
-          Add a Movie
-        </h3>
+
+    return(
+        <div style={{paddingTop:'100px', width:'100%'}}>
+        <Container style={{backgroundColor:'rgba(236,78,32,.5)', width:'100%', marginBottom:'30px', boxShadow: '0px 2px 7px rgba(0,0,0,1)', border:'none', borderRadius:'10px'}}>
+            
+            <h3 style={{ position:'relative',color: 'black',  webkitTextStrokeWidth:'2px', webkitTextStrokeColor:'white', fontSize:'36pt', textAlign:'center'}}>Add a Movie</h3>
+            
+                <Form onSubmit={handleSubmit}>
+                    <Row>
+                        <Col xs="6" sm="4">
+                            <FormGroup>
+                                <Label htmlFor='title' />
+                                <Input name='title' placeholder='title' value={title} onChange={(e) => setTitle(e.target.value)} />
+                             </FormGroup>
+                </Col>
+                <Col xs="6" sm="4">
+                <FormGroup>
+                    <Label htmlFor='description' />
+                    <Input name='description' placeholder='description' value={description} onChange={(e) => setDescription(e.target.value)} />
+                </FormGroup>
+                </Col>
+                <Col xs="6" sm="4">
+                <FormGroup>
+                    <Label htmlFor='actors' />
+                    <Input name='actors' placeholder='actors' value={actors} onChange={(e) => setActors(e.target.value)} />
+                </FormGroup>
+                </Col>
+                </Row>
+                <Row>
+                <Col xs="6" sm="4">
+                <FormGroup>
+                    <Label htmlFor='rating' />
+                    <Input name='rating' placeholder='rating' value={rating} onChange={(e) => setRating(e.target.value)} />
+                </FormGroup>
+                </Col>
+                <Col xs="6" sm="4">
+                <FormGroup>
+                    <Label htmlFor='runtime' />
+                    <Input name='runtime' placeholder='runtime' value={runtime} onChange={(e) => setRuntime(e.target.value)} />
+                </FormGroup>
+                </Col>
+                <Col xs="6" sm="4">
+                <Button type='submit' style={{color: 'black',  webkitTextStrokeWidth:'.2px', webkitTextStrokeColor:'white',backgroundColor:'linear-gradient(to top, #FF9506, #EC4E20)', border:'solid', marginTop:'20px'}}>Click to Submit</Button>
+                </Col>
+                </Row>
+            </Form>
+            </Container>
+       </div>
+    )
+}
+
 
         <Form onSubmit={handleSubmit}>
           <Row>

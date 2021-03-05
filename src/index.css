@@ -1,14 +1,161 @@
-html {
-  background-color: rgb(54,54,49);
-  font-family: 'Black Ops One', cursive;
-}
-
-body {
-  font-family: 'Black Ops One', cursive;
+html{
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("./assets/MovieReel.jpg");
+  background-position: center;
+  background-size: cover;
+  position:absolute;
+  font-family: 'Luckiest Guy';
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+body {
+  height: auto;
+  width: 100%;
+  background-image: url("./assets/MovieReel.jpg");
+  background-position: center;
+  background-size: cover;
+  position:absolute;
+  /* font-family: 'Black Ops One', cursive; */
+  /* font-family: 'Rajdhani'; */
+  /* font-family: 'Orbitron', sans-serif; */
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bungee+Shade&family=Monoton&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bungee+Shade&family=Monoton&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+
+/* div around Login/Signup buttons controlling size*/
+.button-box{
+  width: 226px;
+  height:100px;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  position: relative;
+}
+
+/*targeting Login/Signup buttons styling*/
+.toggle-button{
+  width:130px;
+  height:'40px';
+  /* padding: 10px 30px; */
+  cursor: pointer;
+  background: linear-gradient(to top, #FF9506, #EC4E20);
+  border: solid;
+  outline: none;
+  position: relative;
+  color: black;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.login-button{
+  width:130px;
+  height:'40px';
+  /* padding: 10px 30px; */
+  cursor: pointer;
+  background: linear-gradient(to top, #FF9506, #EC4E20);
+  border: solid;
+  outline: none;
+  position: relative;
+  color: black;
+  margin-bottom: 40px;
+  border-radius: 10px;
+}
+
+.container {
+  width: 100%;
+  height:auto;
+  padding-top: 60px;
+  padding-bottom: 20px;
+}
+
+.login-register-wrapper{
+  height: 440px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background: rgba(2,111,185,.5);
+  box-shadow: 0px 2px 7px rgba(0,0,0,1);
+  overflow: hidden;
+  color:black;
+  border: none;
+  border-radius: 20px;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: white;
+}
+
+.cardTable{
+  box-shadow: 0px 2px 7px rgba(0,0,0,1);
+  overflow: hidden;
+  color:white;
+  border: none;
+  border-radius: 20px;
+  -webkit-text-stroke-width: .1px;
+  -webkit-text-stroke-color: white;
+  width:100%
+}
+.nav-buttons {
+  top: 0;
+  left: 0;
+  position: relative;
+  width: 330px;
+  height: auto;
+  border-radius: 30px;
+
+}
+
+
+
+button {
+  font-size: 1.5em;
+  border:solid;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #026FB9;
+  padding: 10px;
+  color: black;
+}
+
+/* form styling */
+.form-group input{
+  width: 100%;
+  padding: 10px 0;
+  margin:auto;
+  outline: none;
+  background: white;
+  border:solid;
+}
+
+input.submit {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1 em;
+  text-align: center;
+  color: black;
+  padding: 8px 0px;
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 23px;
+  background-color: rgba(16,89,255,1);
+}
+
+/* Form positiong and animation */
+
+#registerform {
+  left: 500px;
+  top: -310px;
+  position: relative;
+}
+
