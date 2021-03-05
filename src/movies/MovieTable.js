@@ -48,10 +48,7 @@ const MovieTable = (props) => {
                         <CardBody>
                         <ListGroup key={index} style={{width:'540px'}}>
                             <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                <ListGroupItemHeading style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>{movie.title}</ListGroupItemHeading>
-                            </ListGroupItem>
-                            <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                <ListGroupItemText style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'24px'}}>ID:  {movie.ownerid}</ListGroupItemText>
+                                <ListGroupItemHeading style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>Title: {movie.title}</ListGroupItemHeading>
                             </ListGroupItem>
                             <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
                                 <ListGroupItemText style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'24px'}}>Description:  {movie.description}</ListGroupItemText>
@@ -84,7 +81,7 @@ const MovieTable = (props) => {
     }
     return(
         <>
-            <h3 style={{paddingTop:'300px', textAlign:'center', fontSize:'36pt',color: 'black', WebkitTextStrokeWidth:'2px',WebkitTextStrokeColor:'white'}}>Fan Reviews</h3>
+            <h3 style={{paddingTop:'300px', textAlign:'center', fontSize:'36pt',color: 'black', WebkitTextStrokeWidth:'2px',WebkitTextStrokeColor:'white'}}>Movies</h3>
             
             <div>
                 {movieMapper()}

@@ -24,7 +24,6 @@ const Reviews = (props) => {
         return movies.map((movie, index) => {
             return(
             <>
-            <h3 style={{textAlign:'center',fontSize:'48px', webkitTextStrokeWidth:'1px', webkitTextStrokeColor:'white'}}>Reviews</h3>
                 <Container>
                     <Row>
                         <Col>
@@ -60,12 +59,14 @@ const Reviews = (props) => {
         })
 
     }
-
-    fetchMovies();
-  }, [props.token]);
+    
+    useEffect(() => {
+        fetchMovies();
+    }, [props.token]);
 
   return (
     <Container>
+        <h3 style={{textAlign:'center',fontSize:'48px', webkitTextStrokeWidth:'1px', webkitTextStrokeColor:'white'}}>Reviews</h3>
       <Row>
         <Col>{reviewMapper()}</Col>
       </Row>
