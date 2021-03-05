@@ -24,27 +24,33 @@ const Random = (props) => {
            setRuntime();
            setDescription('');
            setActors('');
-           setRating();
+           setRating('');
         });
 
-     return (
-      <div>
-        <div className="p-3 my-2 rounded bg-docs-transparent-grid">
-          <Toast>
-            <ToastHeader>
-              {props.title}
-            </ToastHeader>
-            <ToastBody>
-              <p>{props.actors}</p>
-              <p>{props.description}</p>
-              <p>{props.runtime}</p>
-              <p>{props.rating}</p>
-            </ToastBody>
-          </Toast>
-        </div>
-      </div>
-  );
-     };
+        return (
+         <div>
+           <div className="p-3 my-2 rounded bg-docs-transparent-grid">
+             <Toast>
+               <ToastHeader>
+                 {props.title}
+               </ToastHeader>
+               <ToastBody>
+                 <p>{props.actors}</p>
+                 <p>{props.description}</p>
+                 <p>{props.runtime}</p>
+                 <p>{props.rating}</p>
+               </ToastBody>
+             </Toast>
+           </div>
+         </div>
+         );
+      };
+
+    return(
+      <>
+        {handleRetrieval}
+      </>
+    )
 };
 
 export default Random;

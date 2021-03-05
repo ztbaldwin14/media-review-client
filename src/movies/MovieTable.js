@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Card, CardImg, CardTitle, CardText, CardGroup,
     CardSubtitle, CardBody, Container, Row, Col} from 'reactstrap';
+import Random from "../auth/Random";
 
 const MovieTable = (props) => {
     const deleteMovie = (movie) => {
@@ -41,6 +42,7 @@ const MovieTable = (props) => {
                     </CardGroup>
                     </Col>
                     </Row>
+                    
                 </Container>
             )
         })
