@@ -7,7 +7,7 @@ const Signup = (props) => {
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
-        debugger
+       
         event.preventDefault();
         fetch('http://localhost:3000/user/register', {
             method: 'POST',
@@ -30,13 +30,13 @@ const Signup = (props) => {
         <Form onSubmit={handleSubmit}>
             <FormGroup>
                 <Label htmlFor='username'>Username</Label>
-                <Input onChange={(e) => setUsername(e.target.value)} name='username' type='email' placeholder='test@test.com'value={username} minLength={'3'} required />
+                <Input onChange={(e) => setUsername(e.target.value)} name='username' type='email' placeholder='Email' value={username} minLength={'3'} required />
             </FormGroup>
             <FormGroup>
                 <Label htmlFor='password'>Password</Label>
-                <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' value={password} minLength={'5'} required />
+                <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' placeholder='Password' value={password} minLength={'5'} required />
             </FormGroup>
-            <Button type='submit'>Signup</Button>
+            <Button type='submit' className='login-button' style={{color:'black', border:'solid', borderRadius:'10px'}}>Signup</Button>
         </Form>
         </div>
     </React.Fragment>   

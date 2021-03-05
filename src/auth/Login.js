@@ -27,13 +27,13 @@ const Login = (props) => {
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label htmlFor='username'>Username</Label>
-                    <Input onChange={(e) => setUsername(e.target.value)} name='username' value={username} />
+                    <Input onChange={(e) => setUsername(e.target.value)} name='username' placeholder='Email' value={username} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='password'>Password</Label>
-                    <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' value={password} />
+                    <Input onChange={(e) => setPassword(e.target.value)} name='password' type='password' placeholder='Password' value={password} />
                 </FormGroup>
-                <Button type='submit'>Login</Button>
+                <Button type='submit' className='login-button' style={{color:'black', border:'solid', borderRadius:'10px'}}>Login</Button>
             </Form>
         </React.Fragment>  
         // <div>
