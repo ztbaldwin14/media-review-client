@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import ReactStars from 'react-rating-stars-component';
 import { Card, Container, Row, Col, ListGroup, ListGroupItem, ListGroupItemText} from 'reactstrap';
-
 
 const Reviews = (props) => {
     const [movies, setMovies] = useState([]);
@@ -17,7 +16,7 @@ const Reviews = (props) => {
         .then((res) => res.json())
         .then((data) => setMovies(data))
     }
-    
+
     const reviewMapper = () => {
         return movies.map((movie, index) => {
             return(

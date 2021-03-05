@@ -11,6 +11,8 @@ const Sitebar = (props) => {
     }
 
     return(
+
+
         <Navbar tag="h1" color='faded' light expand='md' style={{backgroundColor:'rgba(95,95,95,0.3)', backgroundO:'25%'}}>
             <NavbarBrand tag="h4" style={{ paddingTop:'60px', color: 'black', fontSize:'72pt',width: '100%', textAlign:'center', paddingLeft:'200px', WebkitTextStrokeWidth:'2px',WebkitTextStrokeColor:'white'}} href='/'>Reel Reviews</NavbarBrand>
             <NavbarToggler onClick={toggle} />

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Button, Card, CardImg, CardTitle, CardText, CardGroup,
     CardSubtitle, CardBody, Container, Row, Col, ListGroupItem, ListGroup, ListGroupItemHeading,ListGroupItemText} from 'reactstrap';
 import ReactStars from 'react-rating-stars-component';
+import reel from '../images/reelimage.PNG';
 
 const MovieTable = (props) => {
     const [stars, setStars] = useState();
@@ -33,10 +34,10 @@ const MovieTable = (props) => {
     }
 
     const movieMapper = () => {
+
         const style={text:{color:'white'},
         
     }  
-    
         return props.movies.map((movie, index) => {
             return(
                 <Container key={index}>
@@ -66,8 +67,8 @@ const MovieTable = (props) => {
                         </ListGroup>
                         </CardBody>
                         <Col style={{marginRight: '20px'}}>
-                            <ReactStars name={`${Math.random()*10}}`} value={stars} count={5} onChange={e => setStars(e)} size={24} activeColor='#ffd700' />
-                            <textarea name='review' value={review} onChange={(e) => setReview(e.target.value)} placeholder='Leave Review Here' style={{marginTop: '10px', height: '100px', width: '250px', border: 'solid'}}></textarea>
+                            <ReactStars name={`${Math.random()*10}}`} value={stars} count={5} onChange={e => setStars(e)} size={24} activeColor='#FF9506' />
+                            <textarea name='review' value={props.review} onChange={(e) => setReview(e.target.value)} placeholder='Leave Review Here' style={{marginTop: '10px', height: '100px', width: '250px', border: 'solid'}}></textarea>
                             <Button style={{ backgroundColor: '#026FB9', color: 'black', border: 'solid'}} type='button' onClick={(e) => {reviewMovie(movie)}}>Submit Review</Button>
                             <CardBody style={{display:'flex', alignItems:'flex-end', marginRight:'auto', textAlign:'right'}}>
                             <Button style={{ backgroundColor: '#FF9506', color:'black', border:'solid'}} onClick={() => {props.editUpdateMovie(movie); props.updateOn()}}>Update</Button>
