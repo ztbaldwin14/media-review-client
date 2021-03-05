@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Button, Card, CardImg, CardTitle, CardText, CardGroup,
-    CardSubtitle, CardBody, Container, Row, Col } from 'reactstrap';
+    CardSubtitle, CardBody, Container, Row, Col, ListGroupItem, ListGroup, ListGroupItemHeading,ListGroupItemText} from 'reactstrap';
 import ReactStars from 'react-rating-stars-component';
 import reel from '../images/reelimage.PNG';
 
@@ -34,24 +34,37 @@ const MovieTable = (props) => {
     }
 
     const movieMapper = () => {
-      
+
+        const style={text:{color:'white'},
+        
+    }  
         return props.movies.map((movie, index) => {
             return(
                 <Container key={index}>
-                    <Row>
-                <Col>
                 <CardGroup>
-                    <Card style={{width:'100px', backgroundColor:'#026FB9', margin:'10px', border:'outset', borderRadius:'10pt', flexDirection:'row'}}>
-                        <CardImg style={{width:'182px', height:'268px', margin:'10px'}}  alt="Card image cap" src={reel} />
+                    <Card className='cardTable' style={{color: 'white', backgroundColor: 'rgba(2,111,185,.5)', margin:'10px', flexDirection:'row',}}>
+                        <CardImg style={{ transform: 'translate(5%, 50%)', display:'flex', justifyContent:'center', alignItems:'center', width:'182px', height:'268px'}} src="https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UX182_CR0,0,182,268_AL_.jpg" alt="Card image cap" />
                         <CardBody>
-                        <CardTitle tag="h3" style={{color:'black'}}>Title:  {movie.title}</CardTitle>
-                        <CardSubtitle tag="h4" style={{color:'black'}}>Details:</CardSubtitle>
-                        <ul key={index}>
-                        <CardText style={{color:'black'}}>Description:  {movie.description}</CardText>
-                        <CardText style={{color:'black'}}>Actors:  {movie.actors}</CardText>
-                        <CardText style={{color:'black'}}>Rating:  {movie.rating}</CardText>
-                        <CardText style={{color:'black'}}>Runtime:  {movie.runtime}</CardText>
-                        </ul>
+                        <ListGroup key={index} style={{width:'540px'}}>
+                            <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                <ListGroupItemHeading style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>{movie.title}</ListGroupItemHeading>
+                            </ListGroupItem>
+                            <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                <ListGroupItemText style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'24px'}}>ID:  {movie.ownerid}</ListGroupItemText>
+                            </ListGroupItem>
+                            <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                <ListGroupItemText style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'24px'}}>Description:  {movie.description}</ListGroupItemText>
+                            </ListGroupItem>
+                            <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                <ListGroupItemText style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'24px'}}>Actors:  {movie.actors}</ListGroupItemText>
+                            </ListGroupItem>
+                            <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                <ListGroupItemText style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'24px'}}>Rating:  {movie.rating}</ListGroupItemText>
+                            </ListGroupItem>
+                            <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                <ListGroupItemText style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'24px'}}>Runtime:  {movie.runtime}</ListGroupItemText>
+                            </ListGroupItem>
+                        </ListGroup>
                         </CardBody>
                         <Col style={{marginRight: '20px'}}>
                             <ReactStars name={`${Math.random()*10}}`} value={stars} count={5} onChange={e => setStars(e)} size={24} activeColor='#FF9506' />
@@ -64,17 +77,15 @@ const MovieTable = (props) => {
                         </Col>
                     </Card>                    
                     </CardGroup>
-                    </Col>
-                    </Row>
                 </Container>
             )
         })
     }
     return(
         <>
-            <h3 style={{ color: '#FF9506', textAlign:'center', fontSize:'28pt'}}>Fan Reviews</h3>
-            <hr />
-            <div style={{marginBottom: '30px'}}>
+            <h3 style={{paddingTop:'300px', textAlign:'center', fontSize:'36pt',color: 'black', WebkitTextStrokeWidth:'2px',WebkitTextStrokeColor:'white'}}>Fan Reviews</h3>
+            
+            <div>
                 {movieMapper()}
             </div>
         </>

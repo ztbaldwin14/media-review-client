@@ -35,9 +35,8 @@ function App() {
   }
 
   return (
-    <div style={{
-      backgroundColor: 'rgb(54,54,49)',
-      fontFamily:'Black Ops One'
+    <div className='moviereel' style={{
+      fontFamily: 'Luckiest Guy'
     }}>
       <Sitebar clearToken={clearToken} reviews={reviews} showReviews={showReviews} setShowReviews={setShowReviews} />
       {showReviews ? reviews() : protectedViews()}
