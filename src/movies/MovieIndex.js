@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import MovieCreate from "./MovieCreate";
 import MovieTable from "./MovieTable";
 import MovieEdit from "./MovieEdit";
-import CarouselImg from "./CarouselImg";
+import Carousel from "./Carousel";
 
 const MovieIndex = (props) => {
   const [movies, setMovies] = useState([]);
@@ -41,6 +41,10 @@ const MovieIndex = (props) => {
 
   return (
     <Container>
+      <Row>
+        <Carousel />
+      </Row>
+      <hr />
       <Row>
         <Col>
           <MovieCreate fetchMovies={fetchMovies} token={props.token} />
