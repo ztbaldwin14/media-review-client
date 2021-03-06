@@ -4,6 +4,8 @@ import MovieCreate from "./MovieCreate";
 import MovieTable from "./MovieTable";
 import MovieEdit from "./MovieEdit";
 import Carousel from "./Carousel";
+import APIURL from '../helpers/environment';
+
 
 const MovieIndex = (props) => {
   const [movies, setMovies] = useState([]);
@@ -11,7 +13,7 @@ const MovieIndex = (props) => {
   const [movieToUpdate, setMovieToUpdate] = useState({});
 
   const fetchMovies = () => {
-    fetch("http://localhost:3000/movies", {
+    fetch(`${APIURL}/movies`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

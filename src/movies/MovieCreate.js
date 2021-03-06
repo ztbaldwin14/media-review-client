@@ -9,6 +9,8 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import APIURL from '../helpers/environment';
+
 
 const MovieCreate = (props) => {
   const [title, setTitle] = useState("");
@@ -19,7 +21,7 @@ const MovieCreate = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/movies/create", {
+    fetch(`${APIURL}/movies/create`, {
       method: "POST",
       body: JSON.stringify({
         movies: {
