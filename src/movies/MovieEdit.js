@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import APIURL from '../helpers/environment';
+
 
 const MovieEdit = (props) => {
     const [editTitle, setEditTitle] = useState(props.movieToUpdate.title);
@@ -10,7 +12,7 @@ const MovieEdit = (props) => {
 
     const movieUpdate = (event, movie) => {
         event.preventDefault();
-        fetch(`http://localhost:3000/movies/${props.movieToUpdate.id}`, {
+        fetch(`${APIURL}/movies/${props.movieToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({movies: {title: editTitle, description: editDescription, actors: editActors, rating: editRating, runtime: editRuntime }}),
             headers: new Headers({

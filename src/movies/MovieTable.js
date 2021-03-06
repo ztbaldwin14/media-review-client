@@ -4,14 +4,14 @@ import {Button, Card, CardImg, CardTitle, CardText, CardGroup,
     CardSubtitle, CardBody, Container, Row, Col, ListGroupItem, ListGroup, ListGroupItemHeading,ListGroupItemText} from 'reactstrap';
 import ReactStars from 'react-rating-stars-component';
 import reel from '../images/reelimage.PNG';
-
+import APIURL from '../helpers/environment';
 
 const MovieTable = (props) => {
   const [stars, setStars] = useState();
   const [review, setReview] = useState("");
 
   const deleteMovie = (movie) => {
-    fetch(`http://localhost:3000/movies/${movie.id}`, {
+    fetch(`${APIURL}/movies/${movie.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const MovieTable = (props) => {
   };
 
   const reviewMovie = (movie) => {
-    fetch(`http://localhost:3000/movies/${movie.id}`, {
+    fetch(`${APIURL}/movies/${movie.id}`, {
       method: "PUT",
       body: JSON.stringify({ movies: { stars: stars, review: review } }),
       headers: new Headers({
