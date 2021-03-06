@@ -1,40 +1,58 @@
-    import React, { useState, useEffect } from 'react';
-import { Button, Form, FormGroup, Label, Input, Container, Row, Col } from 'reactstrap';
+import React, { useState, useEffect } from "react";
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
 
 const MovieCreate = (props) => {
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [actors, setActors] = useState('');
-    const [rating, setRating] = useState('');
-    const [runtime, setRuntime] = useState();
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [actors, setActors] = useState("");
+  const [rating, setRating] = useState("");
+  const [runtime, setRuntime] = useState();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        fetch('http://localhost:3000/movies/create', {
-            method: 'POST',
-            body: JSON.stringify({movies: {title: title, description: description, actors: actors, rating: rating, runtime: runtime}}),
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': props.token
-            })
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                setTitle('');
-                setDescription('');
-                setActors('');
-                setRating('');
-                setRuntime();
-                props.fetchMovies();
-            })
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:3000/movies/create", {
+      method: "POST",
+      body: JSON.stringify({
+        movies: {
+          title: title,
+          description: description,
+          actors: actors,
+          rating: rating,
+          runtime: runtime,
+        },
+      }),
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: props.token,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setTitle("");
+        setDescription("");
+        setActors("");
+        setRating("");
+        setRuntime();
+        props.fetchMovies();
+      });
+  };
+
 
     return(
-        <>
-        <Container style={{backgroundColor:'#EA4E33', width:'100%', marginBottom:'30px', border:'outset', borderRadius:'10px'}}>
+        <div style={{paddingTop:'100px', width:'100%'}}>
+        <Container style={{backgroundColor:'rgba(236,78,32,.5)', width:'100%', marginBottom:'30px', boxShadow: '0px 2px 7px rgba(0,0,0,1)', border:'none', borderRadius:'10px'}}>
             
-            <h3 style={{ color: 'black', position:'relative', webkitTextStrokeWidth:'.5px', webkitTextStrokeColor:'black', fontSize:'28pt', textAlign:'center'}}>Add a Movie</h3>
+            <h3 style={{ position:'relative',color: 'black',  webkitTextStrokeWidth:'2px', webkitTextStrokeColor:'white', fontSize:'36pt', textAlign:'center'}}>Add a Movie</h3>
             
                 <Form onSubmit={handleSubmit}>
                     <Row>
@@ -71,12 +89,12 @@ const MovieCreate = (props) => {
                 </FormGroup>
                 </Col>
                 <Col xs="6" sm="4">
-                <Button type='submit' style={{backgroundColor:'#026FB9', border:'outset', borderColor: 'black', marginTop:'20px'}}>Click to Submit</Button>
+                <Button type='submit' style={{color: 'black',  webkitTextStrokeWidth:'.2px', webkitTextStrokeColor:'white',backgroundColor:'linear-gradient(to top, #FF9506, #EC4E20)', border:'solid', marginTop:'20px'}}>Click to Submit</Button>
                 </Col>
                 </Row>
             </Form>
             </Container>
-       </>
+       </div>
     )
 }
 
