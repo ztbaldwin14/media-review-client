@@ -3,13 +3,15 @@ import MovieTable from "./MovieTable";
 import React, { useState, useEffect } from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { Card, Container, Row, Col, ListGroup, ListGroupItem, ListGroupItemText} from 'reactstrap';
+import APIURL from '../helpers/environment';
+
 
 const Reviews = (props) => {
   const [movies, setMovies] = useState([]);
 
 
     function fetchMovies(){
-        fetch('http://localhost:3000/movies', {
+        fetch(`${APIURL}/movies`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
