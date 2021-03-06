@@ -24,17 +24,11 @@ const Reviews = (props) => {
         return movies.map((movie, index) => {
             return(
             <>
-            <h3 style={{textAlign:'center',fontSize:'48px', webkitTextStrokeWidth:'1px', webkitTextStrokeColor:'white'}}>Reviews</h3>
                 <Container>
                     <Row>
                         <Col>
                             <Card style={{color:'white',display:'flex', alignItems:'center',justifyItems:'center',width: '600px', height:'auto',backgroundColor:'rgba(255,149,6,.5)',borderRadius: '10px', boxShadow: '0px 2px 7px rgba(0,0,0,1)', margin:'20px'}}>
                                 <ListGroup  key={index} style={{width:'500px', paddingTop:'25px', paddingBottom:'25px', borderRadius:'5px'}}>
-                                    <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                        <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
-                                            {movie.id}
-                                        </ListGroupItemText>
-                                    </ListGroupItem>
                                     <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
                                         <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
                                             {movie.title}
@@ -47,7 +41,7 @@ const Reviews = (props) => {
                                     </ListGroupItem>
                                     <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
                                         <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
-                                            {movie.stars}
+                                            <ReactStars edit={false} value={movie.stars} count={5} size={24} activeColor='#FF9506' />
                                         </ListGroupItemText>
                                     </ListGroupItem>
                                 </ListGroup>
@@ -60,12 +54,14 @@ const Reviews = (props) => {
         })
 
     }
-
-    fetchMovies();
-  }, [props.token]);
+    
+    useEffect(() => {
+        fetchMovies();
+    }, [props.token]);
 
   return (
     <Container>
+        <h3 style={{textAlign:'center',fontSize:'48px', webkitTextStrokeWidth:'1px', webkitTextStrokeColor:'white'}}>Reviews</h3>
       <Row>
         <Col>{reviewMapper()}</Col>
       </Row>
