@@ -31,11 +31,6 @@ const Reviews = (props) => {
                                 <ListGroup  key={index} style={{width:'500px', paddingTop:'25px', paddingBottom:'25px', borderRadius:'5px'}}>
                                     <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
                                         <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
-                                            {movie.id}
-                                        </ListGroupItemText>
-                                    </ListGroupItem>
-                                    <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                        <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
                                             {movie.title}
                                         </ListGroupItemText>
                                     </ListGroupItem>
@@ -46,7 +41,7 @@ const Reviews = (props) => {
                                     </ListGroupItem>
                                     <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
                                         <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
-                                            {movie.stars}
+                                            <ReactStars edit={false} value={movie.stars} count={5} size={24} activeColor='#FF9506' />
                                         </ListGroupItemText>
                                     </ListGroupItem>
                                 </ListGroup>
