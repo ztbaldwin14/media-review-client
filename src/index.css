@@ -5,6 +5,7 @@ html{
   background-position: center;
   background-size: cover;
   position:absolute;
+  background-repeat: no-repeat;
   font-family: 'Luckiest Guy';
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -19,6 +20,7 @@ body {
   background-position: center;
   background-size: cover;
   position:absolute;
+  background-repeat: no-repeat;
   /* font-family: 'Black Ops One', cursive; */
   /* font-family: 'Rajdhani'; */
   /* font-family: 'Orbitron', sans-serif; */
@@ -71,12 +73,12 @@ body {
   border-radius: 10px;
 }
 
-.container {
+/* .container {
   width: 100%;
   height:auto;
   padding-top: 60px;
   padding-bottom: 20px;
-}
+} */
 
 .login-register-wrapper{
   height: 440px;
@@ -114,6 +116,12 @@ body {
 
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(300px, auto);
+}
 
 
 button {
