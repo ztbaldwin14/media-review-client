@@ -4,14 +4,14 @@ import {Button, Card, CardImg, CardTitle, CardText, CardGroup,
     CardSubtitle, CardBody, Container, Row, Col, ListGroupItem, ListGroup, ListGroupItemHeading,ListGroupItemText} from 'reactstrap';
 import ReactStars from 'react-rating-stars-component';
 import reel from '../images/reelimage.PNG';
-
+import APIURL from '../helpers/environment';
 
 const MovieTable = (props) => {
   const [stars, setStars] = useState();
   const [review, setReview] = useState("");
 
   const deleteMovie = (movie) => {
-    fetch(`http://localhost:3000/movies/${movie.id}`, {
+    fetch(`${APIURL}/movies/${movie.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ const MovieTable = (props) => {
   };
 
   const reviewMovie = (movie) => {
-    fetch(`http://localhost:3000/movies/${movie.id}`, {
+    fetch(`${APIURL}/movies/${movie.id}`, {
       method: "PUT",
       body: JSON.stringify({ movies: { stars: stars, review: review } }),
       headers: new Headers({
@@ -48,10 +48,7 @@ const MovieTable = (props) => {
                         <CardBody>
                         <ListGroup key={index} style={{width:'540px'}}>
                             <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                <ListGroupItemHeading style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>{movie.title}</ListGroupItemHeading>
-                            </ListGroupItem>
-                            <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                <ListGroupItemText style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'24px'}}>ID:  {movie.ownerid}</ListGroupItemText>
+                                <ListGroupItemHeading style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>Title: {movie.title}</ListGroupItemHeading>
                             </ListGroupItem>
                             <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
                                 <ListGroupItemText style={style.text,{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'24px'}}>Description:  {movie.description}</ListGroupItemText>
@@ -84,7 +81,7 @@ const MovieTable = (props) => {
     }
     return(
         <>
-            <h3 style={{paddingTop:'300px', textAlign:'center', fontSize:'36pt',color: 'black', WebkitTextStrokeWidth:'2px',WebkitTextStrokeColor:'white'}}>Fan Reviews</h3>
+            <h3 style={{paddingTop:'300px', textAlign:'center', fontSize:'36pt',color: 'black', WebkitTextStrokeWidth:'2px',WebkitTextStrokeColor:'white'}}>Movies</h3>
             
             <div>
                 {movieMapper()}

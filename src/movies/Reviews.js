@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Container, Row, Col, ListGroup, ListGroupItem, ListGroupItemText} from 'reactstrap';
+import APIURL from '../helpers/environment';
+
 
 const Reviews = (props) => {
   const [movies, setMovies] = useState([]);
 
 
     function fetchMovies(){
-        fetch('http://localhost:3000/movies', {
+        fetch(`${APIURL}/movies`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -20,6 +22,7 @@ const Reviews = (props) => {
     const reviewMapper = () => {
         return movies.map((movie, index) => {
             return(
+
                 <>
                     <div>
                         <Card style={{color:'white',backgroundColor:'rgba(255,149,6,.5)',borderRadius: '10px', boxShadow: '0px 2px 7px rgba(0,0,0,1)', padding:'10px'}}>
@@ -51,6 +54,7 @@ const Reviews = (props) => {
             )
         })
     }
+
     useEffect(() => {
     fetchMovies();
   }, [props.token]);
@@ -76,3 +80,4 @@ export default Reviews;
                                     </Card.Text>
                                 </Card.Body> */}
                                 // ,display:'flex',flexWrap:'wrap', justifyContent:'space-between',flexBasis: '15em'
+
