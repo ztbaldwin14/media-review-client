@@ -1,7 +1,4 @@
-
-import MovieTable from "./MovieTable";
 import React, { useState, useEffect } from 'react';
-import ReactStars from 'react-rating-stars-component';
 import { Card, Container, Row, Col, ListGroup, ListGroupItem, ListGroupItemText} from 'reactstrap';
 
 const Reviews = (props) => {
@@ -23,54 +20,59 @@ const Reviews = (props) => {
     const reviewMapper = () => {
         return movies.map((movie, index) => {
             return(
-            <>
-            <h3 style={{textAlign:'center',fontSize:'48px', webkitTextStrokeWidth:'1px', webkitTextStrokeColor:'white'}}>Reviews</h3>
-                <Container>
-                    <Row>
-                        <Col>
-                            <Card style={{color:'white',display:'flex', alignItems:'center',justifyItems:'center',width: '600px', height:'auto',backgroundColor:'rgba(255,149,6,.5)',borderRadius: '10px', boxShadow: '0px 2px 7px rgba(0,0,0,1)', margin:'20px'}}>
-                                <ListGroup  key={index} style={{width:'500px', paddingTop:'25px', paddingBottom:'25px', borderRadius:'5px'}}>
-                                    <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                        <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
-                                            {movie.id}
-                                        </ListGroupItemText>
-                                    </ListGroupItem>
-                                    <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                        <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
-                                            {movie.title}
-                                        </ListGroupItemText>
-                                    </ListGroupItem>
-                                    <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                        <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
-                                            {movie.review}
-                                        </ListGroupItemText>
-                                    </ListGroupItem>
-                                    <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                        <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'36px'}}>
-                                            {movie.stars}
-                                        </ListGroupItemText>
-                                    </ListGroupItem>
-                                </ListGroup>
-                            </Card>
-                        </Col>
-                    </Row>
-                </Container>
+                <>
+                    <div>
+                        <Card style={{color:'white',backgroundColor:'rgba(255,149,6,.5)',borderRadius: '10px', boxShadow: '0px 2px 7px rgba(0,0,0,1)', padding:'10px'}}>
+                            <ListGroup  key={index} style={{ padding:'25px', borderRadius:'5px'}}>
+                                <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                    <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'18px'}}>
+                                        ID: {movie.id}
+                                    </ListGroupItemText>
+                                </ListGroupItem>
+                                <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                    <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'18px'}}>
+                                        Title: {movie.title}
+                                    </ListGroupItemText>
+                                </ListGroupItem>
+                                <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                    <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'18px'}}>
+                                        Review: {movie.review}
+                                    </ListGroupItemText>
+                                </ListGroupItem>
+                                <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
+                                    <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'18px'}}>
+                                        Stars: {movie.stars}
+                                    </ListGroupItemText>
+                                </ListGroupItem>
+                            </ListGroup>
+                        </Card>
+                    </div>
                 </>
             )
         })
-
     }
-
+    useEffect(() => {
     fetchMovies();
   }, [props.token]);
 
   return (
-    <Container>
-      <Row>
-        <Col>{reviewMapper()}</Col>
-      </Row>
-    </Container>
+    <div className='wrapper'>
+            {reviewMapper()}
+    </div>
   );
 };
 
 export default Reviews;
+        {/* <Card.Body key={index}>
+                                    <Card.Title>Title: {movie.title}</Card.Title>
+                                    <Card.Text>
+                                        ID: {movie.id}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Review: {movie.review}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Rating{movie.stars}
+                                    </Card.Text>
+                                </Card.Body> */}
+                                // ,display:'flex',flexWrap:'wrap', justifyContent:'space-between',flexBasis: '15em'
