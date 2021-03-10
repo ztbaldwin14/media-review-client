@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Container, Row, Col, ListGroup, ListGroupItem, ListGroupItemText} from 'reactstrap';
 import APIURL from '../helpers/environment';
+import ReactStars from 'react-rating-stars-component';
 
 
 const Reviews = (props) => {
