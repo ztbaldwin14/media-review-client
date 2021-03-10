@@ -39,7 +39,7 @@ const Reviews = (props) => {
                                 </ListGroupItem>
                                 <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
                                     <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'18px'}}>
-                                        Stars: {movie.stars}
+                                        Stars: <ReactStars edit={false} value={movie.stars} count={5} size={24} activeColor='#FF9506' />
                                     </ListGroupItemText>
                                 </ListGroupItem>
                             </ListGroup>
