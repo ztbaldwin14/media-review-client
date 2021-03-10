@@ -44,7 +44,7 @@ const MovieTable = (props) => {
                 <Container key={index}>
                 <CardGroup>
                     <Card className='cardTable' style={{color: 'white', backgroundColor: 'rgba(2,111,185,.5)', margin:'10px', flexDirection:'row',}}>
-                        <CardImg style={{ transform: 'translate(5%, 50%)', display:'flex', justifyContent:'center', alignItems:'center', width:'182px', height:'268px'}} src="reel" alt="Card image cap" />
+                        <CardImg style={{ transform: 'translate(5%, 50%)', display:'flex', justifyContent:'center', alignItems:'center', width:'182px', height:'268px'}} src={reel} alt="Card image cap" />
                         <CardBody>
                         <ListGroup key={index} style={{width:'540px'}}>
                             <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
