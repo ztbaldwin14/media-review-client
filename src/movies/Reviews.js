@@ -62,17 +62,3 @@ const Reviews = (props) => {
 };
 
 export default Reviews;
-        {/* <Card.Body key={index}>
-                                    <Card.Title>Title: {movie.title}</Card.Title>
-                                    <Card.Text>
-                                        ID: {movie.id}
-                                    </Card.Text>
-                                    <Card.Text>
-                                        Review: {movie.review}
-                                    </Card.Text>
-                                    <Card.Text>
-                                        Rating{movie.stars}
-                                    </Card.Text>
-                                </Card.Body> */}
-                                // ,display:'flex',flexWrap:'wrap', justifyContent:'space-between',flexBasis: '15em'
-
