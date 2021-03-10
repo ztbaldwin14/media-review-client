@@ -29,11 +29,6 @@ const Reviews = (props) => {
                             <ListGroup  key={index} style={{ padding:'25px', borderRadius:'5px'}}>
                                 <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
                                     <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'18px'}}>
-                                        ID: {movie.id}
-                                    </ListGroupItemText>
-                                </ListGroupItem>
-                                <ListGroupItem style={{backgroundColor:'rgba(0,0,0,.5)'}}>
-                                    <ListGroupItemText style={{fontFamily: 'Akaya Kanadaka, cursive', fontSize:'18px'}}>
                                         Title: {movie.title}
                                     </ListGroupItemText>
                                 </ListGroupItem>
